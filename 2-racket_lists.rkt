@@ -15,9 +15,9 @@
       ys
       (cons (car xs) (my-append (cdr xs) ys)))) ; cria uma lista iniciada com o primeiro elemento da primeira lista, percorre ela e depois retorna os elementos da segunda lista
 
-; map (cria uma lista com base em uma funcao aplicada em valores de outra lista
-(define (my-map f xs);f eh uma fun
+; map (cria uma lista com base em uma funcao aplicada em valores de outra lista)
+(define (my-map f xs); f eh uma funcao
   (if (null? xs)
       null
-      (cons (f (car xs))
-            (my-map f (cdr xs)))))
+      (cons (f (car xs)) ;aplica a funcao f na cabeca da lista xs
+            (my-map f (cdr xs))))); percorre recursivamente a lista xs
